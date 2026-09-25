@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DSA Patterns Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="toast-stack" id="toastStack"></div>
+<div class="app-shell">
+
+  <aside class="sidebar">
+    <div class="brand"><div class="logo">🧩</div><div><div class="btitle">DSA Tracker</div><div class="bsub">Solve · Track · Level up</div></div></div>
+    <button class="navbtn active" data-view="dashboard"><span class="ic">📊</span>Dashboard</button>
+    <button class="navbtn" data-view="patterns"><span class="ic">🧩</span>Patterns</button>
+    <button class="navbtn" data-view="achievements"><span class="ic">🏆</span>Achievements</button>
+    <div class="sidebar-foot">Progress saved to this browser only.</div>
+  </aside>
+
+  <div class="topbar">
+    <div class="logo">🧩</div><h1>DSA Tracker</h1>
+  </div>
+
+  <main class="main">
+
+    <section class="view active" id="view-dashboard">
+      <h2 class="view-title">Dashboard</h2>
+      <p class="view-sub">Your overall progress across every pattern.</p>
+
+      <div class="hero">
+        <div class="hero-top">
+          <div class="avatar" id="avatarInitial">L1</div>
+          <div class="hero-id">
+            <div class="level-row"><span class="level-name" id="levelName">Rookie Coder</span><span class="xp-text" id="xpText">0 XP</span></div>
+            <div class="xp-bar-wrap">
+              <div class="xp-bar"><span id="xpBarFill" style="width:0%"></span></div>
+              <div class="xp-caption"><span id="xpCaptionLeft">Level 1</span><span id="xpCaptionRight">0 XP to next level</span></div>
+            </div>
+          </div>
+          <div class="streak-chip" id="streakChip">🔥 0</div>
+        </div>
+        <div class="stat-grid">
+          <div class="stat"><span class="num" id="statSolved">0/0</span><span class="lbl">Solved</span></div>
+          <div class="stat"><span class="num" id="statPct">0%</span><span class="lbl">Complete</span></div>
+          <div class="stat"><span class="num" id="statPatterns">0/0</span><span class="lbl">Patterns Done</span></div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <p class="section-title">🏆 Recent achievements <button class="link-btn" data-goto="achievements">View all</button></p>
+        <div class="badge-row" id="badgeRowDash"></div>
+      </div>
+
+      <div class="section-card">
+        <p class="section-title">🧩 Pattern progress <button class="link-btn" data-goto="patterns">Open patterns</button></p>
+        <div class="quicklist" id="quickList"></div>
+      </div>
+    </section>
+
+    <section class="view" id="view-patterns">
+      <h2 class="view-title">Patterns</h2>
+      <p class="view-sub">Tick a question off once you've solved it.</p>
+      <div class="controls">
+        <input id="search" type="text" placeholder="Search a question or pattern…">
+        <button class="btn" id="expandAll">Expand all</button>
+        <button class="btn" id="collapseAll">Collapse all</button>
+      </div>
+      <main id="list"></main>
+      <div class="empty hidden" id="emptyMsg">No questions match your search.</div>
+    </section>
+
+    <section class="view" id="view-achievements">
+      <h2 class="view-title">Achievements</h2>
+      <p class="view-sub">Unlock badges as you build momentum.</p>
+      <div class="section-card">
+        <div class="badge-grid" id="badgeGridFull"></div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<nav class="bottom-nav">
+  <button class="navbtn active" data-view="dashboard"><span class="ic">📊</span>Home</button>
+  <button class="navbtn" data-view="patterns"><span class="ic">🧩</span>Patterns</button>
+  <button class="navbtn" data-view="achievements"><span class="ic">🏆</span>Badges</button>
+</nav>
+
+<script src="script.js"></script>
+</body>
+</html>
